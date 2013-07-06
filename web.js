@@ -8,12 +8,12 @@ var buf = new Buffer(256);
 
 ## var readfile = fs.readFileSync("index.html");
 
-buf = fs.readFileSync("index.html");
+var buf = fs.readFileSync("index.html");
 
-## var resp = buf.toString();
+var resp = buf.toString();
 
 app.get('/', function(request, response) {
-  response.send(buf.toString());
+  response.send(resp);
 });
 
 var port = process.env.PORT || 5000;
