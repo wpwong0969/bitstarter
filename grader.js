@@ -66,12 +66,15 @@ if(require.main == module) {
         .option('-u, --url <url_file>', 'Path to http://nameless-lowlands-7086.herokuapp.com', URL_DEFAULT) 
         .parse(process.argv);
     if (program.url){
+        var htmfile = 'downloaded_index.html';
         var url = program.url.toString();
         rest.get(url).on('complete', function(result,respone){
+        var apiurl = fs.writeFileSync(htmlfile,getHtml);
         var checkJson = checkHtmlFile(program.url, program.checks);
-        })};
-//  var checkJson = checkHtmlFile(program.file, program.checks);
-   
+    })}
+    else{
+        var checkJson = checkHtmlFile(program.file, program.checks);
+    }
     var outJson = JSON.stringify(checkJson, null, 4);
     console.log(outJson);
 } else {
