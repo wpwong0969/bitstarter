@@ -70,7 +70,7 @@ if(require.main == module) {
         rest.get(url).on('complete', function(result,respone){
         var checkJson = checkHtmlFile(program.url, program.checks);
         })};
-    var checkJson = checkHtmlFile(program.file, program.checks);
+//  var checkJson = checkHtmlFile(program.file, program.checks);
    
     var outJson = JSON.stringify(checkJson, null, 4);
     console.log(outJson);
